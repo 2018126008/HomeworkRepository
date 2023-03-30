@@ -1,0 +1,65 @@
+input {
+    background-color: #f5f5f5;
+    font-size:large;
+    margin-bottom: 10px;
+    padding: 12px;
+    width: 100%;
+    border-style: solid;
+}
+
+label {
+    color: #333;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: large;
+    margin: 20px 25px 20px 10px;
+}
+
+a {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+form {
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    background-color: #fff;
+    height: 100px;
+    padding: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 2rem;
+}
+
+#sign_up {
+    background-color: #198a39;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 0px 0px 0px 10px;
+}
+
+#sign_in {
+    background-color: #1618a8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 0px 0px 0px 10px;
+}
+
+#submit {
+    width: 60%;
+    margin-left: 50%;
+}
