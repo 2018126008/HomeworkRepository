@@ -91,6 +91,7 @@
         };
 
         const loadMoreList = () => {
+            console.log("touched");
             for (let i = idx; i < idx + 6 && i < data.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
@@ -109,14 +110,13 @@
                     productRow.appendChild(productElement);
                 }
 
-                document.getElementById('product-list').appendChild(productRow);
+                listElm.appendChild(productRow);
             }
             idx += 6;
         }
 
         fetchProducts().then(temp => {
             loadMoreList();
-
         });
 
         listElm.addEventListener('scroll', () => {
