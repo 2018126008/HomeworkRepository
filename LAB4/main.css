@@ -158,6 +158,11 @@ nav {
     flex-direction: row;
 }
 
+.product-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .product:after, .hover_text {
     display:none;
 }

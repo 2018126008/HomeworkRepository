@@ -4,6 +4,35 @@
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
         <script>
+            fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
+            .then(response => response.json())
+            .then(data => {
+                // Create rows of two products each
+                for (let i = 0; i < data.length; i += 2) {
+                const productRow = document.createElement('div');
+                productRow.classList.add('product-row');
+
+                // Create product elements for each row
+                for (let j = i; j < i + 2 && j < data.length; j++) {
+                    const product = data[j];
+                    const productElement = document.createElement('div');
+                    productElement.innerHTML = `
+                    <h2>${product.name}</h2>
+                    <p>Price: $${product.price}</p>
+                    <p>Description: ${product.description}</p>
+                    <hr>
+                    `;
+                    productRow.appendChild(productElement);
+                }
+
+                document.getElementById('product-list').appendChild(productRow);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        </script>
+        <!-- <script>
             // Fetch product data from JSON file
             fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
             .then(response => response.json())
@@ -19,14 +48,14 @@
 
                 document.getElementById("product-list").innerHTML = productLines.map(productLine => `
                     <div>
-                    <h2>${productLine[0].name}</h2>
-                    <p>${productLine[0].description}</p>
-                    <p>$${productLine[0].price}</p>
+                    <h2>${productLines[0].name}</h2>
+                    <p>${productLines[0].description}</p>
+                    <p>$${productLines[0].price}</p>
                     </div>
                     <div>
-                    <h2>${productLine[1].name}</h2>
-                    <p>${productLine[1].description}</p>
-                    <p>$${productLine[1].price}</p>
+                    <h2>${productLines[1].name}</h2>
+                    <p>${productLines[1].description}</p>
+                    <p>$${productLines[1].price}</p>
                     </div>
                     </br>
                 `).join("");
@@ -34,7 +63,7 @@
             .catch(error => {
                 console.error('Error:', error);
             });
-        </script>
+        </script> -->
     </head>
     <body>
         <div id="container">
@@ -59,3 +88,5 @@
         </div>
     </body>
 </html>
+
+
