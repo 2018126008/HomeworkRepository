@@ -1,0 +1,21 @@
+[
+    {
+      "name": "T-Shirt",
+      "description": "A comfortable and stylish T-Shirt",
+      "imageUrl": "https://example.com/t-shirt.jpg",
+      "price": 20
+    },
+    {
+      "name": "Jeans",
+      "description": "A pair of durable and comfortable jeans",
+      "imageUrl": "https://example.com/jeans.jpg",
+      "price": 50
+    },
+    {
+      "name": "Shoes",
+      "description": "A pair of stylish and comfortable shoes",
+      "imageUrl": "https://example.com/shoes.jpg",
+      "price": 100
+    }
+  ]
+  
