@@ -45,14 +45,16 @@
                 idx += 6;
             }
 
-            listElm.addEventListener('scroll', () => {
-                if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-                    loadMoreList();
-                }
-            });
+            
 
             fetchProducts().then(temp => {
                 loadMoreList();
+
+                listElm.addEventListener('scroll', () => {
+                    if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+                        loadMoreList();
+                    }
+                });
             });
 
         </script>
