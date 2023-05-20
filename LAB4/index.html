@@ -4,7 +4,7 @@
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
         <script>
-            let listElm = document.getElementById('product-list');
+            const listElm = document.getElementById('product-list');
             let itemNum = 1;
             let idx = 0;
             let json_data;
@@ -16,46 +16,43 @@
                 json_data = data;
 
                 const loadMoreList = () => {
-                for (let i = idx; i < 6 && i < json_data.length; i += 2) {
-                    const productRow = document.createElement('div');
-                    productRow.classList.add('product-row');
+                    for (let i = idx; i < 6 && i < json_data.length; i += 2) {
+                        const productRow = document.createElement('div');
+                        productRow.classList.add('product-row');
 
-                    // Create product elements for each row
-                    for (let j = i; j < i + 2 && j < json_data.length; j++) {
-                        const product = json_data[j];
-                        const productElement = document.createElement('div');
-                        productElement.classList.add('product');
-                        productElement.innerHTML = `
-                        <h2>${product.name}</h2>
-                        <p>Price: $${product.price}</p>
-                        <p>Description: ${product.description}</p>
-                        <hr>
-                        `;
-                        productRow.appendChild(productElement);
+                        // Create product elements for each row
+                        for (let j = i; j < i + 2 && j < json_data.length; j++) {
+                            const product = json_data[j];
+                            const productElement = document.createElement('div');
+                            productElement.classList.add('product');
+                            productElement.innerHTML = `
+                            <h2>${product.name}</h2>
+                            <p>Price: $${product.price}</p>
+                            <p>Description: ${product.description}</p>
+                            <hr>
+                            `;
+                            productRow.appendChild(productElement);
+                        }
+
+                        document.getElementById('product-list').appendChild(productRow);
                     }
-
-                    document.getElementById('product-list').appendChild(productRow);
+                    idx += 6;
                 }
-                idx += 6;
 
+                listElm.addEventListener('scroll', () => {
+                    if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+                        loadMoreList();
+                    }
+                });
+
+                // Initially load items
                 loadMoreList();
-
-            }
                 
             })
             .catch(error => {
                 console.error('Error:', error);
             });
             
-            
-
-            // listElm.addEventListener('scroll', () => {
-            //     if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-            //         loadMoreList();
-            //     }
-            // });
-
-            // Initially load items
         </script>
         <!-- <script>
             let page = 1;
