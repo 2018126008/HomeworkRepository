@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Internet Mall</title>
-  <script>
-    // Fetch product data from JSON file
-    fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
-      .then(response => response.json())
-      .then(data => {
-        // Iterate over each product and create HTML elements to display the data
-        data.forEach(product => {
-          const productElement = document.createElement('div');
-          productElement.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>Price: $${product.price}</p>
-            <p>Description: ${product.description}</p>
-            <hr>
-          `;
-          document.getElementById('product-list').appendChild(productElement);
-        });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  </script>
-</head>
-<body>
-  <h1>Internet Mall</h1>
-  <div id="product-list"></div>
-
-  
-</body>
+    <head>
+        <title>HomeworRepository_LAB4_Index</title>
+        <link rel="stylesheet" href="main.css">
+        <script>
+            // Fetch product data from JSON file
+            fetch('product.json')
+            .then(response => response.json())
+            .then(data => {
+                // Iterate over each product and create HTML elements to display the data
+                data.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.innerHTML = `
+                        <h2>${product.name}</h2>
+                        <p>Price: $${product.price}</p>
+                        <p>Description: ${product.description}</p>
+                        <hr>
+                    `;
+                    document.getElementById('shelf').appendChild(productElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="header">
+                <h1 class="banner">Thursday Market</h1>
+            </div>
+            <div class="navigtor">
+                <nav>
+                    <ul>
+                        <li><a class="content" href="index.html">Home</a></li>
+                        <li><a class="content" href="login.html">LogIn</a></li>
+                        <li><a class="content" href="signup.html">SignUp</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="shelf">
+            </div>
+            <div>
+                <h2>Hot deal today</h2>
+                <p>Fish and Fruits</p>
+              </div>
+        </div>
+    </body>
 </html>
