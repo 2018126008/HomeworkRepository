@@ -8,49 +8,48 @@
             let itemNum = 1;
             let idx = 0;
             // Fetch product data from JSON file
-            fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
+            let data = await fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
             .then(response => response.json())
-            .then(data => {
-                // Create rows of two products each
-
-                const loadMoreList = () => {
-                    for (let i = idx; i < 6 && i < data.length; i += 2) {
-                        const productRow = document.createElement('div');
-                        productRow.classList.add('product-row');
-
-                        // Create product elements for each row
-                        for (let j = i; j < i + 2 && j < data.length; j++) {
-                            const product = data[j];
-                            const productElement = document.createElement('div');
-                            productElement.classList.add('product');
-                            productElement.innerHTML = `
-                            <h2>${product.name}</h2>
-                            <p>Price: $${product.price}</p>
-                            <p>Description: ${product.description}</p>
-                            <hr>
-                            `;
-                            productRow.appendChild(productElement);
-                        }
-
-                        document.getElementById('product-list').appendChild(productRow);
-                    }
-                    idx += 6;
-                }
-
-                listElm.addEventListener('scroll', () => {
-                    if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-                        loadMoreList();
-                    }
-                });
-
-                // Initially load items
-                loadMoreList();
-                
-            })
             .catch(error => {
                 console.error('Error:', error);
             });
-            
+
+            for (let i = 0; i < 6; i++){
+                console.log(data[i].name);
+            }
+
+            // const loadMoreList = () => {
+            //     for (let i = idx; i < 6 && i < data.length; i += 2) {
+            //         const productRow = document.createElement('div');
+            //         productRow.classList.add('product-row');
+
+            //         // Create product elements for each row
+            //         for (let j = i; j < i + 2 && j < data.length; j++) {
+            //             const product = data[j];
+            //             const productElement = document.createElement('div');
+            //             productElement.classList.add('product');
+            //             productElement.innerHTML = `
+            //             <h2>${product.name}</h2>
+            //             <p>Price: $${product.price}</p>
+            //             <p>Description: ${product.description}</p>
+            //             <hr>
+            //             `;
+            //             productRow.appendChild(productElement);
+            //         }
+
+            //         document.getElementById('product-list').appendChild(productRow);
+            //     }
+            //     idx += 6;
+            // }
+
+            // listElm.addEventListener('scroll', () => {
+            //     if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+            //         loadMoreList();
+            //     }
+            // });
+
+            // // Initially load items
+            // loadMoreList();
         </script>
         <!-- <script>
             let page = 1;
