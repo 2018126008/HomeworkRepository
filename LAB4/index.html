@@ -4,7 +4,7 @@
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
         <script>
-            const listElm = document.getElementsByClassName('shelf');
+            const listElm = document.getElementById('product-list');
             let itemNum = 1;
             let idx = 0;
             let json_data;
@@ -45,9 +45,9 @@
             }
 
             listElm.addEventListener('scroll', () => {
-            if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-                loadMoreList();
-            }
+                if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+                    loadMoreList();
+                }
             });
 
             // Initially load items
