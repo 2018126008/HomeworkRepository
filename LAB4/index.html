@@ -14,13 +14,8 @@
             .then(data => {
                 // Create rows of two products each
                 json_data = data;
-                
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-            
-            const loadMoreList = () => {
+
+                const loadMoreList = () => {
                 for (let i = idx; i < 6 && i < json_data.length; i += 2) {
                     const productRow = document.createElement('div');
                     productRow.classList.add('product-row');
@@ -42,7 +37,17 @@
                     document.getElementById('product-list').appendChild(productRow);
                 }
                 idx += 6;
+
+                loadMoreList();
+
             }
+                
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            
+            
 
             // listElm.addEventListener('scroll', () => {
             //     if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
@@ -51,7 +56,6 @@
             // });
 
             // Initially load items
-            loadMoreList();
         </script>
         <!-- <script>
             let page = 1;
