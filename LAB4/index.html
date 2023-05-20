@@ -3,7 +3,7 @@
     <head>
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
-        <script>
+        <!-- <script>
                 // Fetch product data from JSON file
                 fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
                 .then(response => response.json())
@@ -33,6 +33,52 @@
                 .catch(error => {
                     console.error('Error:', error);
                 });
+        </script> -->
+        <script>
+            let page = 1;
+            const limit = 10; // Number of products to fetch per page
+            let isLoading = false;
+
+            function fetchProducts() {
+            if (isLoading) return;
+
+            isLoading = true;
+            fetch(`https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json?page=${page}&limit=${limit}`)
+                .then(response => response.json())
+                .then(data => {
+                const productList = document.getElementById('product-list');
+
+                // Append fetched products to the product list
+                data.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.innerHTML = `
+                    <h2>${product.name}</h2>
+                    <p>Price: $${product.price}</p>
+                    <p>Description: ${product.description}</p>
+                    <hr>
+                    `;
+                    productList.appendChild(productElement);
+                });
+
+                page++;
+                isLoading = false;
+                })
+                .catch(error => {
+                console.error('Error:', error);
+                isLoading = false;
+                });
+            }
+
+            // Fetch initial products
+            fetchProducts();
+
+            // Implement infinite scroll
+            const productListElement = document.getElementById('product-list');
+            productListElement.addEventListener('scroll', () => {
+            if (productListElement.scrollTop + productListElement.clientHeight >= productListElement.scrollHeight) {
+                fetchProducts();
+            }
+            });
         </script>
     </head>
     <body>
