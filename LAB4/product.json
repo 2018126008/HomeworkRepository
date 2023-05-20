@@ -16,6 +16,24 @@
       "description": "A pair of stylish and comfortable shoes",
       "imageUrl": "https://example.com/shoes.jpg",
       "price": 100
-    }
+    },
+    {
+        "name": "Jacket",
+        "description": "A comfortable and stylish Jacket",
+        "imageUrl": "https://example.com/jacket.jpg",
+        "price": 80
+      },
+      {
+        "name": "Socks",
+        "description": "A pair of durable and comfortable socks",
+        "imageUrl": "https://example.com/socks.jpg",
+        "price": 30
+      },
+      {
+        "name": "Cap",
+        "description": "A stylish and comfortable Cap",
+        "imageUrl": "https://example.com/cap.jpg",
+        "price": 60
+      }
   ]
   
