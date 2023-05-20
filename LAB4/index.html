@@ -34,38 +34,6 @@
                     console.error('Error:', error);
                 });
         </script>
-        <!-- <script>
-            // Fetch product data from JSON file
-            fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
-            .then(response => response.json())
-            .then(data => {
-                // Iterate over each product and create HTML elements to display the data
-
-                const productLines = [];
-
-                for (let i = 0; i < data.length; i += 2) {
-                    const productLine = [data[i], data[i + 1]];
-                    productLines.push(productLine);
-                }
-
-                document.getElementById("product-list").innerHTML = productLines.map(productLine => `
-                    <div>
-                    <h2>${productLines[0].name}</h2>
-                    <p>${productLines[0].description}</p>
-                    <p>$${productLines[0].price}</p>
-                    </div>
-                    <div>
-                    <h2>${productLines[1].name}</h2>
-                    <p>${productLines[1].description}</p>
-                    <p>$${productLines[1].price}</p>
-                    </div>
-                    </br>
-                `).join("");
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        </script> -->
     </head>
     <body>
         <div id="container">

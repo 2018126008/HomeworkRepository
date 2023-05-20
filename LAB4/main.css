@@ -153,6 +153,11 @@ nav {
     flex-direction: column;
 }
 
+.product-list {
+    height: 400px;
+    overflow-y: scroll;
+}
+
 .product-row {
     display: flex;
     justify-content: space-between;
