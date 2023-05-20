@@ -7,22 +7,20 @@
             const listElm = document.getElementById('product-list');
             let itemNum = 1;
             let idx = 0;
-            let json_data;
             // Fetch product data from JSON file
             fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
             .then(response => response.json())
             .then(data => {
                 // Create rows of two products each
-                json_data = data;
 
                 const loadMoreList = () => {
-                    for (let i = idx; i < 6 && i < json_data.length; i += 2) {
+                    for (let i = idx; i < 6 && i < data.length; i += 2) {
                         const productRow = document.createElement('div');
                         productRow.classList.add('product-row');
 
                         // Create product elements for each row
-                        for (let j = i; j < i + 2 && j < json_data.length; j++) {
-                            const product = json_data[j];
+                        for (let j = i; j < i + 2 && j < data.length; j++) {
+                            const product = data[j];
                             const productElement = document.createElement('div');
                             productElement.classList.add('product');
                             productElement.innerHTML = `
