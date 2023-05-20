@@ -7,16 +7,27 @@
             const listElm = document.getElementById('product-list');
             let itemNum = 1;
             let idx = 0;
+            let data;
             // Fetch product data from JSON file
-            let data = await fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
-            .then(response => response.json())
-            .catch(error => {
-                console.error('Error:', error);
+            async function fetchProducts() {
+                try {
+                    const response = await fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json');
+                    if (!response.ok) {
+                    throw new Error('Request failed');
+                    }
+                    data = await response.json();
+                } catch {
+                    console.error('Error:', error);
+                }
+            };
+
+            fetchProducts().then(temp => {
+                for (let i = 0; i < 6; i++){
+                    console.log(data[i].name);
+                }
             });
 
-            for (let i = 0; i < 6; i++){
-                console.log(data[i].name);
-            }
+            
 
             // const loadMoreList = () => {
             //     for (let i = idx; i < 6 && i < data.length; i += 2) {
