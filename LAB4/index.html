@@ -18,16 +18,16 @@
                 }
 
                 document.getElementById("product-list").innerHTML = productLines.map(productLine => `
-                    <li>
+                    <div>
                     <h2>${productLine[0].name}</h2>
                     <p>${productLine[0].description}</p>
                     <p>$${productLine[0].price}</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                     <h2>${productLine[1].name}</h2>
                     <p>${productLine[1].description}</p>
                     <p>$${productLine[1].price}</p>
-                    </li>
+                    </div>
                     </br>
                 `).join("");
             })
