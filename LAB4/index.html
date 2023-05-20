@@ -3,19 +3,31 @@
     <head>
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
-        <!-- <script>
-                // Fetch product data from JSON file
-                fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Create rows of two products each
-                    for (let i = 0; i < data.length; i += 2) {
+        <script>
+            const listElm = document.querySelector('.shelf');
+            let itemNum = 1;
+            let idx = 0;
+            let json_data;
+            // Fetch product data from JSON file
+            fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json')
+            .then(response => response.json())
+            .then(data => {
+                // Create rows of two products each
+                json_data = data;
+                
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            
+            const loadMoreList = () => {
+                for (let i = idx; i < 6 && i < json_data.length; i += 2) {
                     const productRow = document.createElement('div');
                     productRow.classList.add('product-row');
 
                     // Create product elements for each row
-                    for (let j = i; j < i + 2 && j < data.length; j++) {
-                        const product = data[j];
+                    for (let j = i; j < i + 2 && j < json_data.length; j++) {
+                        const product = json_data[j];
                         const productElement = document.createElement('div');
                         productElement.classList.add('product');
                         productElement.innerHTML = `
@@ -28,13 +40,20 @@
                     }
 
                     document.getElementById('product-list').appendChild(productRow);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        </script> -->
-        <script>
+                }
+                idx += 6;
+            }
+
+            listElm.addEventListener('scroll', () => {
+            if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+                loadMoreList();
+            }
+            });
+
+            // Initially load items
+            loadMoreList();
+        </script>
+        <!-- <script>
             let page = 1;
             const limit = 10; // Number of products to fetch per page
             let isLoading = false;
@@ -79,7 +98,7 @@
                 fetchProducts();
             }
             });
-        </script>
+        </script> -->
     </head>
     <body>
         <div id="container">
