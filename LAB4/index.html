@@ -91,7 +91,6 @@
         };
 
         const loadMoreList = () => {
-            console.log("touched");
             for (let i = idx; i < idx + 6 && i < data.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
@@ -120,6 +119,10 @@
         });
 
         listElm.addEventListener('scroll', () => {
+            console.log(`scrollTop: ${listElm.scrollTop}`);
+            console.log(`clientHeight: ${listElm.clientHeight}`);
+            console.log(`scrollHeight: ${listElm.scrollHeight}`);
+
             if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
                 loadMoreList();
             }
