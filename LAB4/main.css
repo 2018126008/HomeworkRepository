@@ -153,15 +153,13 @@ nav {
     flex-direction: column;
 }
 
-.product {
+.product-row {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 
-.product-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+.product {
+    flex-basis: 50%;
 }
 
 .product:after, .hover_text {
