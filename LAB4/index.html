@@ -9,16 +9,26 @@
             .then(response => response.json())
             .then(data => {
                 // Iterate over each product and create HTML elements to display the data
-                data.forEach(product => {
-                    const productElement = document.createElement('div');
-                    productElement.innerHTML = `
-                        <h2>${product.name}</h2>
-                        <p>Price: $${product.price}</p>
-                        <p>Description: ${product.description}</p>
-                        <hr>
-                    `;
-                    document.getElementById('product-list').appendChild(productElement);
-                });
+
+                const productLines = [];
+
+                for (let i = 0; i < data.length; i += 2) {
+                    const productLine = [data[i], data[i + 1]];
+                    productLines.push(productLine);
+                }
+
+                document.getElementById("product-list").innerHTML = productLines.map(productLine => `
+                    <li>
+                    <h2>${productLine[0].name}</h2>
+                    <p>${productLine[0].description}</p>
+                    <p>$${productLine[0].price}</p>
+                    </li>
+                    <li>
+                    <h2>${productLine[1].name}</h2>
+                    <p>${productLine[1].description}</p>
+                    <p>$${productLine[1].price}</p>
+                    </li>
+                `).join("");
             })
             .catch(error => {
                 console.error('Error:', error);
