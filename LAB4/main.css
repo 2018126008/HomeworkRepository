@@ -150,7 +150,7 @@ nav {
 
 .shelf {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .product {
