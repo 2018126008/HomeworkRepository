@@ -64,7 +64,14 @@
                     </ul>
                 </nav>
             </div>
-            <input type="text" id="search-input" placeholder="Search products" oninput="searchProducts()">
+            <div>
+                <select id="sort-select" onchange="sortProducts()">
+                    <option value="name">Sort by Name</option>
+                    <option value="price-asc">Sort by Price (Low to High)</option>
+                    <option value="price-desc">Sort by Price (High to Low)</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search products" oninput="searchProducts()">
+            </div>
             <div id="product-list" class="shelf">
             </div>
             <div>
@@ -97,7 +104,7 @@
         };
 
         const loadMoreList = () => {
-            for (let i = idx; i < idx + 6 && i < data.length; i += 2) {
+            for (let i = idx; i < idx + 6 && i < filteredProducts.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
 
@@ -124,56 +131,59 @@
         }
 
         fetchProducts().then(temp => {
-            loadMoreList();
+            // loadMoreList();
+            displayProducts(filteredProducts);
         });
         
-        // function displayProducts(products) {
-        //     const productList = document.getElementById('product-list');
-        //     productList.innerHTML = ''; // Clear existing product list
+        function displayProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = ''; // Clear existing product list
 
-        //     // Create rows of two products each
-        //     for (let i = 0; i < products.length; i += 2) {
-        //         const productRow = document.createElement('div');
-        //         productRow.classList.add('product-row');
+            // Create rows of two products each
+            for (let i = 0; i < products.length; i += 2) {
+                const productRow = document.createElement('div');
+                productRow.classList.add('product-row');
 
-        //         // Create product elements for each row
-        //         for (let j = i; j < i + 2 && j < products.length; j++) {
-        //         const product = products[j];
-        //         const productElement = document.createElement('div');
-        //         productElement.classList.add('product');
-        //         productElement.innerHTML = `
-        //             <h2>${product.name}</h2>
-        //             <p>Price: $${product.price}</p>
-        //             <p>Description: ${product.description}</p>
-        //             <hr>
-        //         `;
-        //         productRow.appendChild(productElement);
-        //         }
+                // Create product elements for each row
+                for (let j = i; j < i + 2 && j < products.length; j++) {
+                    const product = products[j];
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+                    productElement.setAttribute("onclick", "toggleDescription(event)");
+                        productElement.innerHTML = `
+                        <img src="${product.imageUrl}" alt="${product.name}">
+                        <div class="description">
+                            <h3>${product.name}</h3>
+                            <p>Price: $${product.price}</p>
+                        </div>
+                    `;
+                    productRow.appendChild(productElement);
+                }
 
-        //         productList.appendChild(productRow);
-        //     }
-        // }
+                productList.appendChild(productRow);
+            }
+        }
 
-        // function sortProducts() {
-        //     const sortBy = document.getElementById('sort-select').value;
+        function sortProducts() {
+            const sortBy = document.getElementById('sort-select').value;
 
-        //     // Sort products based on selected sorting option
-        //     if (sortBy === 'name') {
-        //         filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-        //     } else if (sortBy === 'price-asc') {
-        //         filteredProducts.sort((a, b) => a.price - b.price);
-        //     } else if (sortBy === 'price-desc') {
-        //         filteredProducts.sort((a, b) => b.price - a.price);
-        //     }
+            // Sort products based on selected sorting option
+            if (sortBy === 'name') {
+                filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortBy === 'price-asc') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortBy === 'price-desc') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
 
-        //     displayProducts(filteredProducts);
-        // }
+            displayProducts(filteredProducts);
+        }
 
         function searchProducts() {
             const searchQuery = document.getElementById('search-input').value.toLowerCase();
 
             // Filter products based on search query
-            filteredProducts = currentData.filter(product =>
+            filteredProducts = data.filter(product =>
                 product.name.toLowerCase().includes(searchQuery) ||
                 product.description.toLowerCase().includes(searchQuery)
             );
