@@ -2,216 +2,252 @@
     {
       "name": "T-Shirt",
       "description": "A comfortable and stylish T-Shirt",
+      "category": "clothes",
       "imageUrl": "tshirt.png",
       "price": 20
     },
     {
       "name": "Jeans",
       "description": "A pair of durable and comfortable jeans",
+      "category": "clothes",
       "imageUrl": "jeans.png",
       "price": 50
     },
     {
       "name": "Shoes",
       "description": "A pair of stylish and comfortable shoes",
+      "category": "etc",
       "imageUrl": "running-shoe.png",
       "price": 100
     },
     {
         "name": "Jacket",
         "description": "A comfortable and stylish Jacket",
+        "category": "clothes",
         "imageUrl": "jacket.png",
         "price": 80
     },
     {
         "name": "Socks",
         "description": "A pair of durable and comfortable socks",
+        "category": "etc",
         "imageUrl": "socks.png",
         "price": 30
     },
     {
         "name": "Cap",
         "description": "A stylish and comfortable Cap",
+        "category": "etc",
         "imageUrl": "cap.png",
         "price": 60
     },
     {
         "name": "Underwear",
         "description": "A comfortable and stylish Underwear",
+        "category": "clothes",
         "imageUrl": "boxers.png",
         "price": 55
     },
     {
         "name": "Ring",
         "description": "A durable and comfortable Ring",
+        "category": "etc",
         "imageUrl": "rings.png",
         "price": 150
     },
     {
         "name": "Bracelet",
         "description": "A stylish and comfortable Bracelace",
+        "category": "etc",
         "imageUrl": "bracelet.png",
         "price": 10
     },
     {
         "name": "Hoodie",
         "description": "A comfortable and stylish Hoodie",
+        "category": "clothes",
         "imageUrl": "hoodie.png",
         "price": 40
     },
     {
         "name": "Gloves",
         "description": "A pair of durable and comfortable Gloves",
+        "category": "etc",
         "imageUrl": "hand-glove.png",
         "price": 15
     },
     {
         "name": "Glasses",
         "description": "A stylish and comfortable Glasses",
+        "category": "etc",
         "imageUrl": "glasses.png",
         "price": 30
     },
     {
         "name": "T-Shirt",
         "description": "A comfortable and stylish T-Shirt",
+        "category": "clothes",
         "imageUrl": "tshirt.png",
         "price": 20
       },
       {
         "name": "Jeans",
         "description": "A pair of durable and comfortable jeans",
+        "category": "clothes",
         "imageUrl": "jeans.png",
         "price": 50
       },
       {
         "name": "Shoes",
         "description": "A pair of stylish and comfortable shoes",
+        "category": "etc",
         "imageUrl": "running-shoe.png",
         "price": 100
       },
       {
           "name": "Jacket",
           "description": "A comfortable and stylish Jacket",
+          "category": "clothes",
           "imageUrl": "jacket.png",
           "price": 80
       },
       {
           "name": "Socks",
           "description": "A pair of durable and comfortable socks",
+          "category": "etc",
           "imageUrl": "socks.png",
           "price": 30
       },
       {
           "name": "Cap",
           "description": "A stylish and comfortable Cap",
+          "category": "etc",
           "imageUrl": "cap.png",
           "price": 60
       },
       {
           "name": "Underwear",
           "description": "A comfortable and stylish Underwear",
+          "category": "clothes",
           "imageUrl": "boxers.png",
           "price": 55
       },
       {
           "name": "Ring",
           "description": "A durable and comfortable Ring",
+          "category": "etc",
           "imageUrl": "rings.png",
           "price": 150
       },
       {
           "name": "Bracelet",
           "description": "A stylish and comfortable Bracelace",
+          "category": "etc",
           "imageUrl": "bracelet.png",
           "price": 10
       },
       {
           "name": "Hoodie",
           "description": "A comfortable and stylish Hoodie",
+          "category": "clothes",
           "imageUrl": "hoodie.png",
           "price": 40
       },
       {
           "name": "Gloves",
           "description": "A pair of durable and comfortable Gloves",
+          "category": "etc",
           "imageUrl": "hand-glove.png",
           "price": 15
       },
       {
           "name": "Glasses",
           "description": "A stylish and comfortable Glasses",
+          "category": "etc",
           "imageUrl": "glasses.png",
           "price": 30
       },
       {
         "name": "T-Shirt",
         "description": "A comfortable and stylish T-Shirt",
+        "category": "clothes",
         "imageUrl": "tshirt.png",
         "price": 20
       },
       {
         "name": "Jeans",
         "description": "A pair of durable and comfortable jeans",
+        "category": "clothes",
         "imageUrl": "jeans.png",
         "price": 50
       },
       {
         "name": "Shoes",
         "description": "A pair of stylish and comfortable shoes",
+        "category": "etc",
         "imageUrl": "running-shoe.png",
         "price": 100
       },
       {
           "name": "Jacket",
           "description": "A comfortable and stylish Jacket",
+          "category": "clothes",
           "imageUrl": "jacket.png",
           "price": 80
       },
       {
           "name": "Socks",
           "description": "A pair of durable and comfortable socks",
+          "category": "etc",
           "imageUrl": "socks.png",
           "price": 30
       },
       {
           "name": "Cap",
           "description": "A stylish and comfortable Cap",
+          "category": "etc",
           "imageUrl": "cap.png",
           "price": 60
       },
       {
           "name": "Underwear",
           "description": "A comfortable and stylish Underwear",
+          "category": "clothes",
           "imageUrl": "boxers.png",
           "price": 55
       },
       {
           "name": "Ring",
           "description": "A durable and comfortable Ring",
+          "category": "etc",
           "imageUrl": "rings.png",
           "price": 150
       },
       {
           "name": "Bracelet",
           "description": "A stylish and comfortable Bracelace",
+          "category": "etc",
           "imageUrl": "bracelet.png",
           "price": 10
       },
       {
           "name": "Hoodie",
           "description": "A comfortable and stylish Hoodie",
+          "category": "clothes",
           "imageUrl": "hoodie.png",
           "price": 40
       },
       {
           "name": "Gloves",
           "description": "A pair of durable and comfortable Gloves",
+          "category": "etc",
           "imageUrl": "hand-glove.png",
           "price": 15
       },
       {
           "name": "Glasses",
           "description": "A stylish and comfortable Glasses",
+          "category": "etc",
           "imageUrl": "glasses.png",
           "price": 30
       }

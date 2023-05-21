@@ -71,6 +71,11 @@
                     <option value="price-asc">Sort by Price (Low to High)</option>
                     <option value="price-desc">Sort by Price (High to Low)</option>
                 </select>
+                <select id="category" onchange="categoricalProducts()">
+                    <option value="default">No category</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="etc">Etc</option>
+                </select>
                 <input type="text" id="search-input" placeholder="Search products" oninput="searchProducts()">
             </div>
             <div id="product-list" class="shelf">
@@ -180,12 +185,28 @@
             }
             displayProducts(filteredProducts);
         }
+        function categoricalProducts() {
+            const selectBy = document.getElementById('category').value;
+            idx = 0;
+            // Sort products based on selected sorting option
+            if (sortBy === 'clothes') {
+                filteredProducts = filteredProducts.filter(product =>
+                product.category.toLowerCase().includes("clothes")
+            );
+            } else if (sortBy === 'etc') {
+                filteredProducts = filteredProducts.filter(product =>
+                product.category.toLowerCase().includes("etc"));
+            } else if (sortBy === 'default') {
+                filteredProducts = data.slice();
+            }
+            displayProducts(filteredProducts);
+        }
 
         function searchProducts() {
             const searchQuery = document.getElementById('search-input').value.toLowerCase();
             idx = 0;
             // Filter products based on search query
-            filteredProducts = data.filter(product =>
+            filteredProducts = filteredProducts.filter(product =>
                 product.name.toLowerCase().includes(searchQuery) ||
                 product.description.toLowerCase().includes(searchQuery)
             );
