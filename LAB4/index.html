@@ -175,6 +175,7 @@
             const selectBy = document.getElementById('category').value;
 
             idx = 0;
+            filteredProducts = data.slice();
             // Sort products based on selected sorting option
             if (sortBy === 'name') {
                 filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -182,8 +183,6 @@
                 filteredProducts.sort((a, b) => a.price - b.price);
             } else if (sortBy === 'price-desc') {
                 filteredProducts.sort((a, b) => b.price - a.price);
-            } else if (sortBy === 'default') {
-                filteredProducts = data.slice();
             }
 
             if (selectBy === 'clothes') {
@@ -193,8 +192,6 @@
             } else if (selectBy === 'etc') {
                 filteredProducts = filteredProducts.filter(product =>
                 product.category.toLowerCase().includes("etc"));
-            } else if (selectBy === 'default') {
-                filteredProducts = data.slice();
             }
             displayProducts(filteredProducts);
         }
