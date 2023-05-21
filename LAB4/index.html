@@ -64,6 +64,7 @@
                     </ul>
                 </nav>
             </div>
+            <input type="text" id="search-input" placeholder="Search products" oninput="searchProducts()">
             <div id="product-list" class="shelf">
             </div>
             <div>
@@ -77,6 +78,9 @@
         let itemNum = 1;
         let idx = 0;
         let data;
+
+        let filteredProducts = [];
+
         // Fetch product data from JSON file
         async function fetchProducts() {
             try {
@@ -85,6 +89,7 @@
                 throw new Error('Request failed');
                 }
                 data = await response.json();
+                filteredProducts = data;
             } catch {
                 console.error('Error:', error);
             }
@@ -119,9 +124,64 @@
         fetchProducts().then(temp => {
             loadMoreList();
         });
+        
+        // function displayProducts(products) {
+        //     const productList = document.getElementById('product-list');
+        //     productList.innerHTML = ''; // Clear existing product list
+
+        //     // Create rows of two products each
+        //     for (let i = 0; i < products.length; i += 2) {
+        //         const productRow = document.createElement('div');
+        //         productRow.classList.add('product-row');
+
+        //         // Create product elements for each row
+        //         for (let j = i; j < i + 2 && j < products.length; j++) {
+        //         const product = products[j];
+        //         const productElement = document.createElement('div');
+        //         productElement.classList.add('product');
+        //         productElement.innerHTML = `
+        //             <h2>${product.name}</h2>
+        //             <p>Price: $${product.price}</p>
+        //             <p>Description: ${product.description}</p>
+        //             <hr>
+        //         `;
+        //         productRow.appendChild(productElement);
+        //         }
+
+        //         productList.appendChild(productRow);
+        //     }
+        // }
+
+        // function sortProducts() {
+        //     const sortBy = document.getElementById('sort-select').value;
+
+        //     // Sort products based on selected sorting option
+        //     if (sortBy === 'name') {
+        //         filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+        //     } else if (sortBy === 'price-asc') {
+        //         filteredProducts.sort((a, b) => a.price - b.price);
+        //     } else if (sortBy === 'price-desc') {
+        //         filteredProducts.sort((a, b) => b.price - a.price);
+        //     }
+
+        //     displayProducts(filteredProducts);
+        // }
+
+        function searchProducts() {
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+
+            // Filter products based on search query
+            filteredProducts = data.filter(product =>
+                product.name.toLowerCase().includes(searchQuery) ||
+                product.description.toLowerCase().includes(searchQuery)
+            );
+
+            console.log(filteredProducts);
+
+            // displayProducts(filteredProducts);
+        }
 
         listElm.addEventListener('scroll', () => {
-
             if(Math.ceil(listElm.scrollTop + listElm.clientHeight) >= listElm.scrollHeight) {
                 loadMoreList();
             }
