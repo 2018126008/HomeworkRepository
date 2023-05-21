@@ -66,6 +66,7 @@
             </div>
             <div>
                 <select id="sort-select" onchange="sortProducts()">
+                    <option value="default">No sorting</option>
                     <option value="name">Sort by Name</option>
                     <option value="price-asc">Sort by Price (Low to High)</option>
                     <option value="price-desc">Sort by Price (High to Low)</option>
@@ -148,7 +149,7 @@
                 for (let j = i; j < i + 2 && j < products.length; j++) {
                     const product = products[j];
                     const productElement = document.createElement('div');
-                    productElement.classList.add('product');
+                    productElement.classList.add('image-container');
                     productElement.setAttribute("onclick", "toggleDescription(event)");
                         productElement.innerHTML = `
                         <img src="${product.imageUrl}" alt="${product.name}">
@@ -195,7 +196,7 @@
 
         listElm.addEventListener('scroll', () => {
             if(Math.ceil(listElm.scrollTop + listElm.clientHeight) >= listElm.scrollHeight) {
-                loadMoreList();
+                // loadMoreList();
             }
         });
         function toggleDescription(event) {
