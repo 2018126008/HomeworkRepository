@@ -65,13 +65,13 @@
                 </nav>
             </div>
             <div>
-                <select id="sort-select" onchange="sortProducts()">
+                <select id="sort-select" onchange="sortAndCategoricalProducts()">
                     <option value="default">No sorting</option>
                     <option value="name">Sort by Name</option>
                     <option value="price-asc">Sort by Price (Low to High)</option>
                     <option value="price-desc">Sort by Price (High to Low)</option>
                 </select>
-                <select id="category" onchange="categoricalProducts()">
+                <select id="category" onchange="sortAndCategoricalProducts()">
                     <option value="default">No category</option>
                     <option value="clothes">Clothes</option>
                     <option value="etc">Etc</option>
@@ -170,8 +170,10 @@
             idx += 6;
         }
 
-        function sortProducts() {
+        function sortAndCategoricalProducts() {
             const sortBy = document.getElementById('sort-select').value;
+            const selectBy = document.getElementById('category').value;
+
             idx = 0;
             // Sort products based on selected sorting option
             if (sortBy === 'name') {
@@ -183,12 +185,7 @@
             } else if (sortBy === 'default') {
                 filteredProducts = data.slice();
             }
-            displayProducts(filteredProducts);
-        }
-        function categoricalProducts() {
-            const selectBy = document.getElementById('category').value;
-            idx = 0;
-            // Sort products based on selected sorting option
+
             if (selectBy === 'clothes') {
                 filteredProducts = filteredProducts.filter(product =>
                 product.category.toLowerCase().includes("clothes")
