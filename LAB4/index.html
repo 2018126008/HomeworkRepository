@@ -79,6 +79,7 @@
         let idx = 0;
         let data;
 
+        let currentData = [];
         let filteredProducts = [];
 
         // Fetch product data from JSON file
@@ -103,6 +104,7 @@
                 // Create product elements for each row
                 for (let j = i; j < i + 2 && j < data.length; j++) {
                     const product = data[j];
+                    currentData.add(product);
                     const productElement = document.createElement('div');
                     productElement.classList.add('image-container');
                     productElement.setAttribute("onclick", "toggleDescription(event)");
@@ -171,7 +173,7 @@
             const searchQuery = document.getElementById('search-input').value.toLowerCase();
 
             // Filter products based on search query
-            filteredProducts = data.filter(product =>
+            filteredProducts = currentData.filter(product =>
                 product.name.toLowerCase().includes(searchQuery) ||
                 product.description.toLowerCase().includes(searchQuery)
             );
