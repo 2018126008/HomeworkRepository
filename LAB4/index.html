@@ -127,19 +127,18 @@
             }
         });
         function toggleDescription(event) {
-            console.log("This is an event")
-        //     const imageContainer = event.currentTarget;
-        //     const description = imageContainer.querySelector('.description');
-        //     imageContainer.classList.toggle('active');
-        //     description.classList.toggle('active');
+            const imageContainer = event.currentTarget;
+            const description = imageContainer.querySelector('.description');
+            imageContainer.classList.toggle('active');
+            description.classList.toggle('active');
         }
-        // document.querySelector('img').addEventListener('click', function() {
-        //     if (this.style.opacity != 0.5){
-        //         this.style.opacity = 0.5;
-        //     } else {
-        //         this.style.opacity = 1;
-        //     }
-        // });
+        document.querySelector('img').addEventListener('click', function() {
+            if (this.style.opacity != 0.5){
+                this.style.opacity = 0.5;
+            } else {
+                this.style.opacity = 1;
+            }
+        });
     </script>
 </html>
 
