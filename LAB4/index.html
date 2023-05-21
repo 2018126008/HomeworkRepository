@@ -3,52 +3,6 @@
     <head>
         <title>HomeworRepository_LAB4_Index</title>
         <link rel="stylesheet" href="main.css">
-        <!-- <script>
-            let page = 1;
-            const limit = 10; // Number of products to fetch per page
-            let isLoading = false;
-
-            function fetchProducts() {
-            if (isLoading) return;
-
-            isLoading = true;
-            fetch(`https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json?page=${page}&limit=${limit}`)
-                .then(response => response.json())
-                .then(data => {
-                const productList = document.getElementById('product-list');
-
-                // Append fetched products to the product list
-                data.forEach(product => {
-                    const productElement = document.createElement('div');
-                    productElement.innerHTML = `
-                    <h2>${product.name}</h2>
-                    <p>Price: $${product.price}</p>
-                    <p>Description: ${product.description}</p>
-                    <hr>
-                    `;
-                    productList.appendChild(productElement);
-                });
-
-                page++;
-                isLoading = false;
-                })
-                .catch(error => {
-                console.error('Error:', error);
-                isLoading = false;
-                });
-            }
-
-            // Fetch initial products
-            fetchProducts();
-
-            // Implement infinite scroll
-            const productListElement = document.getElementById('product-list');
-            productListElement.addEventListener('scroll', () => {
-            if (productListElement.scrollTop + productListElement.clientHeight >= productListElement.scrollHeight) {
-                fetchProducts();
-            }
-            });
-        </script> -->
     </head>
     <body>
         <div id="container">
@@ -66,15 +20,15 @@
             </div>
             <div>
                 <select id="sort-select" onchange="sortAndCategoricalAndSearch()">
-                    <option value="default">No sorting</option>
-                    <option value="name">Sort by Name</option>
-                    <option value="price-asc">Sort by Price (Low to High)</option>
-                    <option value="price-desc">Sort by Price (High to Low)</option>
+                    <option value="default">기본</option>
+                    <option value="name">이름 순</option>
+                    <option value="price-asc">가격 낮은 순</option>
+                    <option value="price-desc">가격 높은 순</option>
                 </select>
                 <select id="category" onchange="sortAndCategoricalAndSearch()">
-                    <option value="default">No category</option>
-                    <option value="clothes">Clothes</option>
-                    <option value="etc">Etc</option>
+                    <option value="default">전체</option>
+                    <option value="clothes">옷</option>
+                    <option value="etc">기타</option>
                 </select>
                 <input type="text" id="search-input" placeholder="Search products" oninput="sortAndCategoricalAndSearch()">
             </div>
@@ -94,7 +48,6 @@
         let currentData = [];
         let filteredProducts = [];
 
-        // Fetch product data from JSON file
         async function fetchProducts() {
             try {
                 const response = await fetch('https://raw.githubusercontent.com/2018126008/HomeworkRepository/main/LAB4/product.json');
@@ -113,7 +66,6 @@
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
 
-                // Create product elements for each row
                 for (let j = i; j < i + 2 && j < data.length; j++) {
                     const product = data[j];
                     currentData.push(product);
@@ -136,20 +88,17 @@
         }
 
         fetchProducts().then(temp => {
-            // loadMoreList();
             displayProducts(filteredProducts);
         });
         
         function displayProducts(products) {
             const productList = document.getElementById('product-list');
-            productList.innerHTML = ''; // Clear existing product list
+            productList.innerHTML = '';
 
-            // Create rows of two products each
             for (let i = 0; i < idx + 6 && i < products.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
 
-                // Create product elements for each row
                 for (let j = i; j < i + 2 && j < products.length; j++) {
                     const product = products[j];
                     const productElement = document.createElement('div');
@@ -177,7 +126,6 @@
 
             idx = 0;
             filteredProducts = data.slice();
-            // Sort products based on selected sorting option
             if (sortBy === 'name') {
                 filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
             } else if (sortBy === 'price-asc') {
@@ -220,5 +168,3 @@
         }
     </script>
 </html>
-
-
