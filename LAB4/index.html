@@ -141,7 +141,7 @@
             productList.innerHTML = ''; // Clear existing product list
 
             // Create rows of two products each
-            for (let i = idx; i < idx + 6 && i < products.length; i += 2) {
+            for (let i = 0; i < idx + 6 && i < products.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
 
@@ -177,7 +177,7 @@
             } else if (sortBy === 'price-desc') {
                 filteredProducts.sort((a, b) => b.price - a.price);
             } else if (sortBy === 'default') {
-                filteredProducts = data;
+                filteredProducts = data.slice();
             }
             displayProducts(filteredProducts);
         }
@@ -196,7 +196,7 @@
 
         listElm.addEventListener('scroll', () => {
             if(Math.ceil(listElm.scrollTop + listElm.clientHeight) >= listElm.scrollHeight) {
-                // loadMoreList();
+                displayProducts(filteredProducts);
             }
         });
         function toggleDescription(event) {
