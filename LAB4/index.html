@@ -175,6 +175,8 @@
                 filteredProducts.sort((a, b) => a.price - b.price);
             } else if (sortBy === 'price-desc') {
                 filteredProducts.sort((a, b) => b.price - a.price);
+            } else {
+                filteredProducts = data;
             }
 
             displayProducts(filteredProducts);
@@ -189,9 +191,7 @@
                 product.description.toLowerCase().includes(searchQuery)
             );
 
-            console.log(filteredProducts);
-
-            // displayProducts(filteredProducts);
+            displayProducts(filteredProducts);
         }
 
         listElm.addEventListener('scroll', () => {
