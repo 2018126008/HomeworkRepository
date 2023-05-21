@@ -98,7 +98,7 @@
                 throw new Error('Request failed');
                 }
                 data = await response.json();
-                filteredProducts = _.cloneDeep(data);
+                filteredProducts = data.slice();
             } catch {
                 console.error('Error:', error);
             }
