@@ -104,7 +104,7 @@
                 // Create product elements for each row
                 for (let j = i; j < i + 2 && j < data.length; j++) {
                     const product = data[j];
-                    currentData.add(product);
+                    currentData.push(product);
                     const productElement = document.createElement('div');
                     productElement.classList.add('image-container');
                     productElement.setAttribute("onclick", "toggleDescription(event)");
