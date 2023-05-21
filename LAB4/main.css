@@ -117,14 +117,16 @@ nav {
 }
 
 .image-container {
+    margin-left: 5%;
+    margin-right: 5%;
     position: relative;
     display: inline-block;
     text-align: center;
 }
 
 .image-container img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 .image-container .description {
