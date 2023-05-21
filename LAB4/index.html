@@ -100,7 +100,7 @@
                     const product = data[j];
                     const productElement = document.createElement('div');
                     productElement.classList.add('image-container');
-                    productElement.onclick.add('toggleDescription(event)');
+                    productElement.onclick= toggleDescription(event);
                     productElement.innerHTML = `
                     <img src="${product.imageUrl}" alt="${product.name}">
                     <div class="description">
