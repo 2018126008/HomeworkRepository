@@ -2,217 +2,217 @@
     {
       "name": "T-Shirt",
       "description": "A comfortable and stylish T-Shirt",
-      "imageUrl": "https://example.com/t-shirt.jpg",
+      "imageUrl": "tshirt.png",
       "price": 20
     },
     {
       "name": "Jeans",
       "description": "A pair of durable and comfortable jeans",
-      "imageUrl": "https://example.com/jeans.jpg",
+      "imageUrl": "jeans.png",
       "price": 50
     },
     {
       "name": "Shoes",
       "description": "A pair of stylish and comfortable shoes",
-      "imageUrl": "https://example.com/shoes.jpg",
+      "imageUrl": "running-shoe.png",
       "price": 100
     },
     {
         "name": "Jacket",
         "description": "A comfortable and stylish Jacket",
-        "imageUrl": "https://example.com/jacket.jpg",
+        "imageUrl": "jacket.png",
         "price": 80
     },
     {
         "name": "Socks",
         "description": "A pair of durable and comfortable socks",
-        "imageUrl": "https://example.com/socks.jpg",
+        "imageUrl": "socks.png",
         "price": 30
     },
     {
         "name": "Cap",
         "description": "A stylish and comfortable Cap",
-        "imageUrl": "https://example.com/cap.jpg",
+        "imageUrl": "cap.png",
         "price": 60
     },
     {
         "name": "Underwear",
         "description": "A comfortable and stylish Underwear",
-        "imageUrl": "https://example.com/underwear.jpg",
+        "imageUrl": "boxers.png",
         "price": 55
     },
     {
         "name": "Ring",
         "description": "A durable and comfortable Ring",
-        "imageUrl": "https://example.com/ring.jpg",
+        "imageUrl": "rings.png",
         "price": 150
     },
     {
-        "name": "Bracelace",
+        "name": "Bracelet",
         "description": "A stylish and comfortable Bracelace",
-        "imageUrl": "https://example.com/bracelace.jpg",
+        "imageUrl": "bracelet.png",
         "price": 10
     },
     {
         "name": "Hoodie",
         "description": "A comfortable and stylish Hoodie",
-        "imageUrl": "https://example.com/hoodie.jpg",
+        "imageUrl": "hoodie.png",
         "price": 40
     },
     {
         "name": "Gloves",
         "description": "A pair of durable and comfortable Gloves",
-        "imageUrl": "https://example.com/ring.jpg",
+        "imageUrl": "hand-glove.png",
         "price": 15
     },
     {
         "name": "Glasses",
         "description": "A stylish and comfortable Glasses",
-        "imageUrl": "https://example.com/glasses.jpg",
+        "imageUrl": "glasses.png",
         "price": 30
     },
     {
         "name": "T-Shirt",
         "description": "A comfortable and stylish T-Shirt",
-        "imageUrl": "https://example.com/t-shirt.jpg",
+        "imageUrl": "tshirt.png",
         "price": 20
       },
       {
         "name": "Jeans",
         "description": "A pair of durable and comfortable jeans",
-        "imageUrl": "https://example.com/jeans.jpg",
+        "imageUrl": "jeans.png",
         "price": 50
       },
       {
         "name": "Shoes",
         "description": "A pair of stylish and comfortable shoes",
-        "imageUrl": "https://example.com/shoes.jpg",
+        "imageUrl": "running-shoe.png",
         "price": 100
       },
       {
           "name": "Jacket",
           "description": "A comfortable and stylish Jacket",
-          "imageUrl": "https://example.com/jacket.jpg",
+          "imageUrl": "jacket.png",
           "price": 80
       },
       {
           "name": "Socks",
           "description": "A pair of durable and comfortable socks",
-          "imageUrl": "https://example.com/socks.jpg",
+          "imageUrl": "socks.png",
           "price": 30
       },
       {
           "name": "Cap",
           "description": "A stylish and comfortable Cap",
-          "imageUrl": "https://example.com/cap.jpg",
+          "imageUrl": "cap.png",
           "price": 60
       },
       {
           "name": "Underwear",
           "description": "A comfortable and stylish Underwear",
-          "imageUrl": "https://example.com/underwear.jpg",
+          "imageUrl": "boxers.png",
           "price": 55
       },
       {
           "name": "Ring",
           "description": "A durable and comfortable Ring",
-          "imageUrl": "https://example.com/ring.jpg",
+          "imageUrl": "rings.png",
           "price": 150
       },
       {
-          "name": "Bracelace",
+          "name": "Bracelet",
           "description": "A stylish and comfortable Bracelace",
-          "imageUrl": "https://example.com/bracelace.jpg",
+          "imageUrl": "bracelet.png",
           "price": 10
       },
       {
           "name": "Hoodie",
           "description": "A comfortable and stylish Hoodie",
-          "imageUrl": "https://example.com/hoodie.jpg",
+          "imageUrl": "hoodie.png",
           "price": 40
       },
       {
           "name": "Gloves",
           "description": "A pair of durable and comfortable Gloves",
-          "imageUrl": "https://example.com/ring.jpg",
+          "imageUrl": "hand-glove.png",
           "price": 15
       },
       {
           "name": "Glasses",
           "description": "A stylish and comfortable Glasses",
-          "imageUrl": "https://example.com/glasses.jpg",
+          "imageUrl": "glasses.png",
           "price": 30
       },
       {
         "name": "T-Shirt",
         "description": "A comfortable and stylish T-Shirt",
-        "imageUrl": "https://example.com/t-shirt.jpg",
+        "imageUrl": "tshirt.png",
         "price": 20
       },
       {
         "name": "Jeans",
         "description": "A pair of durable and comfortable jeans",
-        "imageUrl": "https://example.com/jeans.jpg",
+        "imageUrl": "jeans.png",
         "price": 50
       },
       {
         "name": "Shoes",
         "description": "A pair of stylish and comfortable shoes",
-        "imageUrl": "https://example.com/shoes.jpg",
+        "imageUrl": "running-shoe.png",
         "price": 100
       },
       {
           "name": "Jacket",
           "description": "A comfortable and stylish Jacket",
-          "imageUrl": "https://example.com/jacket.jpg",
+          "imageUrl": "jacket.png",
           "price": 80
       },
       {
           "name": "Socks",
           "description": "A pair of durable and comfortable socks",
-          "imageUrl": "https://example.com/socks.jpg",
+          "imageUrl": "socks.png",
           "price": 30
       },
       {
           "name": "Cap",
           "description": "A stylish and comfortable Cap",
-          "imageUrl": "https://example.com/cap.jpg",
+          "imageUrl": "cap.png",
           "price": 60
       },
       {
           "name": "Underwear",
           "description": "A comfortable and stylish Underwear",
-          "imageUrl": "https://example.com/underwear.jpg",
+          "imageUrl": "boxers.png",
           "price": 55
       },
       {
           "name": "Ring",
           "description": "A durable and comfortable Ring",
-          "imageUrl": "https://example.com/ring.jpg",
+          "imageUrl": "rings.png",
           "price": 150
       },
       {
-          "name": "Bracelace",
+          "name": "Bracelet",
           "description": "A stylish and comfortable Bracelace",
-          "imageUrl": "https://example.com/bracelace.jpg",
+          "imageUrl": "bracelet.png",
           "price": 10
       },
       {
           "name": "Hoodie",
           "description": "A comfortable and stylish Hoodie",
-          "imageUrl": "https://example.com/hoodie.jpg",
+          "imageUrl": "hoodie.png",
           "price": 40
       },
       {
           "name": "Gloves",
           "description": "A pair of durable and comfortable Gloves",
-          "imageUrl": "https://example.com/ring.jpg",
+          "imageUrl": "hand-glove.png",
           "price": 15
       },
       {
           "name": "Glasses",
           "description": "A stylish and comfortable Glasses",
-          "imageUrl": "https://example.com/glasses.jpg",
+          "imageUrl": "glasses.png",
           "price": 30
       }
   ]

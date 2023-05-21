@@ -188,3 +188,26 @@ nav {
     margin-left: 5%;
     margin-top: 2%;
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container .description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: balck;
+    font-size: 18px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container.active .description {
+    visibility: visible;
+    opacity: 1;
+}

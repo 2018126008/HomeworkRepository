@@ -69,7 +69,7 @@
             <div>
                 <h2>Hot deal today</h2>
                 <p>Fish and Fruits</p>
-              </div>
+            </div>
         </div>
     </body>
     <script>
@@ -99,12 +99,14 @@
                 for (let j = i; j < i + 2 && j < data.length; j++) {
                     const product = data[j];
                     const productElement = document.createElement('div');
-                    productElement.classList.add('product');
+                    productElement.classList.add('image-container');
+                    productElement.onclick.add('toggleDescription(event)');
                     productElement.innerHTML = `
-                    <h2>${product.name}</h2>
-                    <p>Price: $${product.price}</p>
-                    <p>Description: ${product.description}</p>
-                    <hr>
+                    <img src="${product.imageUrl}" alt="${product.name}">
+                    <div class="description">
+                        <h3>${product.name}</h3>
+                        <p>Price: $${product.price}</p>
+                    </div>
                     `;
                     productRow.appendChild(productElement);
                 }
@@ -124,7 +126,19 @@
                 loadMoreList();
             }
         });
-
+        function toggleDescription(event) {
+            const imageContainer = event.currentTarget;
+            const description = imageContainer.querySelector('.description');
+            imageContainer.classList.toggle('active');
+            description.classList.toggle('active');
+        }
+        document.querySelector('img').addEventListener('click', function() {
+            if (this.style.opacity != 0.5){
+                this.style.opacity = 0.5;
+            } else {
+                this.style.opacity = 1;
+            }
+        });
     </script>
 </html>
 
