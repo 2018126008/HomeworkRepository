@@ -175,10 +175,9 @@
                 filteredProducts.sort((a, b) => a.price - b.price);
             } else if (sortBy === 'price-desc') {
                 filteredProducts.sort((a, b) => b.price - a.price);
-            } else {
+            } else if (sortBy === 'default') {
                 filteredProducts = data;
             }
-
             displayProducts(filteredProducts);
         }
 
