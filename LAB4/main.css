@@ -96,6 +96,17 @@ nav {
     overflow-y: scroll;
 }
 
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product:hover img{
+    transform: scale(1.5);
+    transition: 2s;
+}
+
 .form {
     margin-left: 5%;
     margin-top: 2%;
@@ -104,6 +115,7 @@ nav {
 .image-container {
     position: relative;
     display: inline-block;
+    text-align: center;
 }
 
 .image-container img {

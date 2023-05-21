@@ -189,14 +189,14 @@
             const selectBy = document.getElementById('category').value;
             idx = 0;
             // Sort products based on selected sorting option
-            if (sortBy === 'clothes') {
+            if (selectBy === 'clothes') {
                 filteredProducts = filteredProducts.filter(product =>
                 product.category.toLowerCase().includes("clothes")
             );
-            } else if (sortBy === 'etc') {
+            } else if (selectBy === 'etc') {
                 filteredProducts = filteredProducts.filter(product =>
                 product.category.toLowerCase().includes("etc"));
-            } else if (sortBy === 'default') {
+            } else if (selectBy === 'default') {
                 filteredProducts = data.slice();
             }
             displayProducts(filteredProducts);
