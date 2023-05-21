@@ -26,21 +26,6 @@
 }
 
 @media screen and (max-width:480px) {
-    .fish {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .meats {
-        display: none;
-    }
-    .vegetables {
-        display: none;
-    }
-    
-    .fruits {
-        display: none;
-    }
     nav ul {
         list-style: none;
         margin: 0;
@@ -51,22 +36,6 @@
     }
 }
 @media screen and (min-width:481px) and (max-width:800px) {
-    .fish {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .meats {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .vegetables {
-        display: none;
-    }
-    .fruits {
-        display: none;
-    }
     nav ul {
         list-style: none;
         margin: 0;
@@ -78,26 +47,6 @@
     }
 }
 @media screen and (min-width:801px) {
-    .fish {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .meats {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .vegetables {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .fruits {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
     nav ul {
         list-style: none;
         margin: 0;
@@ -133,12 +82,6 @@
     flex-wrap: wrap;
     justify-content: start;
 
-}
-
-.product img {
-    margin: 5%;
-    width: 50px;
-    height: 50px;
 }
 
 nav {
@@ -192,6 +135,9 @@ nav {
 .image-container {
     position: relative;
     display: inline-block;
+}
+
+.image-container img {
     width: 50px;
     height: 50px;
 }
