@@ -98,7 +98,7 @@
                 throw new Error('Request failed');
                 }
                 data = await response.json();
-                filteredProducts = data;
+                filteredProducts = _.cloneDeep(data);
             } catch {
                 console.error('Error:', error);
             }
@@ -141,7 +141,7 @@
             productList.innerHTML = ''; // Clear existing product list
 
             // Create rows of two products each
-            for (let i = 0; i < products.length; i += 2) {
+            for (let i = idx; i < idx + 6 && i < products.length; i += 2) {
                 const productRow = document.createElement('div');
                 productRow.classList.add('product-row');
 
@@ -163,11 +163,12 @@
 
                 productList.appendChild(productRow);
             }
+            idx += 6;
         }
 
         function sortProducts() {
             const sortBy = document.getElementById('sort-select').value;
-
+            idx = 0;
             // Sort products based on selected sorting option
             if (sortBy === 'name') {
                 filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -183,7 +184,7 @@
 
         function searchProducts() {
             const searchQuery = document.getElementById('search-input').value.toLowerCase();
-
+            idx = 0;
             // Filter products based on search query
             filteredProducts = data.filter(product =>
                 product.name.toLowerCase().includes(searchQuery) ||
