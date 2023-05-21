@@ -128,10 +128,10 @@
         });
         function toggleDescription(event) {
             const imageContainer = event.currentTarget;
-            if (this.style.opacity != 0.5){
-                this.style.opacity = 0.5;
+            if (imageContainer.style.opacity != 0.5){
+                imageContainer.style.opacity = 0.5;
             } else {
-                this.style.opacity = 1;
+                imageContainer.style.opacity = 1;
             }
             const description = imageContainer.querySelector('.description');
             imageContainer.classList.toggle('active');
